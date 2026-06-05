@@ -1,0 +1,1695 @@
+<!doctype html>
+<html lang="vi" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Momo Melody Studio - Hộp Quà Văn Phòng Phẩm Ngọt Ngào 💙</title>
+    <link rel="icon" type="image/png" href="./logo.png" />
+    <!-- Sử dụng bộ font Quicksand & Nunito hỗ trợ hoàn hảo tiếng Việt không lỗi font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              title: ["Quicksand", "sans-serif"],
+              body: ["Nunito", "sans-serif"],
+            },
+            colors: {
+              cream: "#F4F9FF", // Nền giấy xanh kem cực mát dịu
+              pastelBlue: "#CBE2FD", // Xanh pastel kẹo ngọt
+              pastelMint: "#E0F2FE", // Xanh da trời nhạt trong trẻo
+              pastelYellow: "#FFF2CC", // Vàng nhạt điểm xuyết ấm áp
+              borderBlue: "#334155", // Màu viền xanh xám đậm nét vẽ chì
+              melodyBlue: "#2563EB", // Xanh dương hoàng gia rực rỡ thương hiệu
+              paperDark: "#1E293B", // Chữ màu xanh đen mực máy sang trọng
+            },
+            boxShadow: {
+              "soft-blue": "0 8px 30px rgb(37 99 235 / 0.06)",
+              "hand-drawn-blue": "4px 4px 0px #334155",
+              "hand-drawn-hover-blue": "2px 2px 0px #334155",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* Thiết lập font nền chung */
+      body {
+        font-family: "Nunito", sans-serif;
+        background-color: #f4f9ff;
+        color: #1e293b;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Quicksand", sans-serif;
+      }
+
+      /* Hiệu ứng rung nhẹ cho sticker và nút */
+      @keyframes wiggle {
+        0%,
+        100% {
+          transform: rotate(-3deg);
+        }
+        50% {
+          transform: rotate(3deg);
+        }
+      }
+      .animate-wiggle {
+        animation: wiggle 3s ease-in-out infinite;
+      }
+      .hover-wiggle:hover {
+        animation: wiggle 0.5s ease-in-out infinite;
+      }
+
+      /* Hiệu ứng lơ lửng nhẹ nhàng */
+      @keyframes floatY {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+      .animate-float {
+        animation: floatY 4s ease-in-out infinite;
+      }
+      .animate-float-delayed {
+        animation: floatY 4s ease-in-out infinite;
+        animation-delay: 2s;
+      }
+
+      /* Hiệu ứng trôi ngang của mây */
+      @keyframes drift {
+        0% {
+          transform: translateX(-10%);
+        }
+        50% {
+          transform: translateX(10%);
+        }
+        100% {
+          transform: translateX(-10%);
+        }
+      }
+      .animate-drift {
+        animation: drift 25s ease-in-out infinite;
+      }
+
+      /* Viền rách kiểu dán sổ Scrapbook */
+      .scallop-border {
+        background-image: radial-gradient(
+          circle at 10px -5px,
+          transparent 12px,
+          #f4f9ff 13px
+        );
+        background-size: 20px 20px;
+      }
+
+      /* Custom viền tem thư */
+      .stamp-edge {
+        background: radial-gradient(circle, #f4f9ff 4px, transparent 5px);
+        background-size: 14px 14px;
+      }
+    </style>
+  </head>
+  <body class="relative overflow-x-hidden">
+    <!-- Các đám mây cổ tích trôi nổi xung quanh -->
+    <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+      <div class="absolute top-[10%] left-[5%] animate-drift opacity-60">
+        <svg class="w-24 h-16 text-white fill-current" viewBox="0 0 100 60">
+          <path
+            d="M20,40 C10,40 5,30 15,20 C10,10 30,5 45,15 C55,5 75,10 75,25 C85,25 90,35 80,45 C85,55 60,60 45,50 C30,60 15,55 20,40 Z"
+          />
+        </svg>
+      </div>
+      <div
+        class="absolute top-[35%] right-[3%] animate-drift opacity-50"
+        style="animation-delay: -5s"
+      >
+        <svg class="w-32 h-20 text-white fill-current" viewBox="0 0 100 60">
+          <path
+            d="M20,40 C10,40 5,30 15,20 C10,10 30,5 45,15 C55,5 75,10 75,25 C85,25 90,35 80,45 C85,55 60,60 45,50 C30,60 15,55 20,40 Z"
+          />
+        </svg>
+      </div>
+      <div
+        class="absolute bottom-[25%] left-[2%] animate-drift opacity-45"
+        style="animation-delay: -12s"
+      >
+        <svg class="w-20 h-12 text-white fill-current" viewBox="0 0 100 60">
+          <path
+            d="M20,40 C10,40 5,30 15,20 C10,10 30,5 45,15 C55,5 75,10 75,25 C85,25 90,35 80,45 C85,55 60,60 45,50 C30,60 15,55 20,40 Z"
+          />
+        </svg>
+      </div>
+    </div>
+
+    <!-- Thanh điều hướng bo cạnh nét chì màu xanh xám -->
+    <nav
+      class="bg-white/85 backdrop-blur-md sticky top-0 z-50 border-b-2 border-borderBlue/20"
+    >
+      <div
+        class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <a href="#" class="flex items-center gap-3 group">
+          <!-- Mascot Mèo đeo tai nghe nhạc cực đáng yêu của Momo Melody Studio -->
+          <div
+            class="w-12 h-12 bg-pastelBlue rounded-full border-2 border-borderBlue flex items-center justify-center font-bold text-2xl relative overflow-hidden group-hover:scale-110 transition-transform"
+          >
+            <img src="logo.png" alt="" />
+            <div class="absolute bottom-0 w-full h-2 bg-[#A5C9FF]"></div>
+          </div>
+          <div>
+            <span
+              class="text-xl sm:text-2xl font-bold text-borderBlue tracking-tight block leading-none"
+              >Momo <span class="text-melodyBlue">Melody</span></span
+            >
+            <span
+              class="text-[9px] text-gray-500 font-bold tracking-wider uppercase block mt-1"
+              >Creative Stationery Studio</span
+            >
+          </div>
+        </a>
+        <div class="hidden md:flex items-center gap-8 font-bold text-paperDark">
+          <a href="#about" class="hover:text-melodyBlue transition-colors"
+            >Bên trong hộp quà?</a
+          >
+          <a
+            href="#how-it-works"
+            class="hover:text-melodyBlue transition-colors"
+            >Cách hoạt động</a
+          >
+          <a href="#gallery" class="hover:text-melodyBlue transition-colors"
+            >Sản phẩm vẽ mẫu</a
+          >
+          <a href="#faqs" class="hover:text-melodyBlue transition-colors"
+            >Giải đáp câu hỏi</a
+          >
+        </div>
+        <div>
+          <a
+            href="#register"
+            class="inline-block bg-melodyBlue hover:bg-blue-700 text-white font-bold px-5 py-2.5 rounded-full shadow-hand-drawn-blue hover:shadow-hand-drawn-hover-blue border-2 border-borderBlue hover:translate-x-[2px] hover:translate-y-[2px] transition-all text-sm tracking-wide"
+          >
+            📮 Đăng ký nhận hộp quà
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section mang phong cách hoạt hình, sticker lấp lánh nghệ thuật -->
+    <section class="relative pt-12 pb-24 md:py-32 overflow-hidden px-6">
+      <div
+        class="max-w-6xl mx-auto grid md:grid-cols-12 gap-12 items-center relative z-10"
+      >
+        <!-- Cột văn bản giới thiệu -->
+        <div class="md:col-span-7 space-y-8 text-center md:text-left">
+          <div
+            class="inline-flex items-center gap-2 bg-pastelMint border-2 border-borderBlue px-4 py-1.5 rounded-full text-sm font-bold shadow-sm text-borderBlue animate-wiggle"
+          >
+            <span class="text-lg">✨</span> Chào mừng tới thế giới văn phòng
+            phẩm của Momo!
+          </div>
+          <h1
+            class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-paperDark tracking-tight leading-tight"
+          >
+            💌 Nhận một hộp quà
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-melodyBlue to-[#60A5FA]"
+              >dễ thương</span
+            >
+            mỗi tháng
+          </h1>
+          <p
+            class="text-lg sm:text-xl text-slate-600 leading-relaxed max-w-xl mx-auto md:mx-0"
+          >
+            Những chiếc postcard A6 vẽ tay mộc mạc, bộ sticker lấp lánh nhũ kim
+            tuyến độc quyền, cùng washi sticker bọc sáp đáng yêu từ nhà Momo
+            Melody sẽ được đóng gói thủ công để gửi thẳng tới hiên nhà bạn.
+          </p>
+          <div
+            class="flex flex-col sm:flex-row justify-center md:justify-start gap-4 pt-2"
+          >
+            <a
+              href="#register"
+              class="bg-pastelYellow text-paperDark font-bold text-lg px-8 py-4 rounded-2xl border-4 border-borderBlue shadow-hand-drawn-blue hover:shadow-hand-drawn-hover-blue hover:translate-x-[2px] hover:translate-y-[2px] transition-all text-center group"
+            >
+              🎁 Đăng ký nhận hộp quà tháng tới
+              <span
+                class="inline-block group-hover:translate-x-1 transition-transform"
+                >→</span
+              >
+            </a>
+          </div>
+          <!-- Slogan dấu bưu điện hoài cổ -->
+          <div
+            class="flex items-center justify-center md:justify-start gap-3 text-sm text-borderBlue font-bold"
+          >
+            <span
+              class="w-8 h-8 rounded-full border-2 border-dashed border-borderBlue/40 flex items-center justify-center text-xs"
+              >🎶</span
+            >
+            Mỗi sản phẩm đều chứa giai điệu của sự bình yên và hạnh phúc.
+          </div>
+        </div>
+
+        <!-- Cột hình ảnh minh họa chiếc phong bì ruy-băng nhạc của Momo -->
+        <div class="md:col-span-5 flex justify-center relative">
+          <div
+            class="absolute w-72 h-72 md:w-96 md:h-96 rounded-full border-4 border-dashed border-melodyBlue/10 -z-10 flex items-center justify-center"
+          >
+            <div
+              class="w-48 h-48 rounded-full border-2 border-dashed border-melodyBlue/15"
+            ></div>
+          </div>
+
+          <div class="relative w-full max-w-[340px] md:max-w-[400px]">
+            <!-- Sticker lấp lánh dán xéo góc -->
+            <div
+              class="absolute -top-6 -right-4 w-16 h-16 bg-pastelYellow rounded-full border-2 border-borderBlue flex items-center justify-center text-2xl z-20 animate-wiggle"
+            >
+              <img src="logo.png" alt="" />
+            </div>
+
+            <!-- Khung hình minh họa chính -->
+            <div
+              class="bg-white border-4 border-borderBlue p-6 rounded-3xl shadow-hand-drawn-blue relative animate-float"
+            >
+              <!-- Tem thư bưu điện -->
+              <div
+                class="absolute top-4 right-4 w-14 h-16 bg-pastelBlue border-2 border-dashed border-borderBlue p-1 text-center flex flex-col justify-between items-center shadow-sm"
+              >
+                <span class="text-xs font-bold text-borderBlue">STUDIO</span>
+                <span class="text-xl">🐱</span>
+                <span class="text-[9px] font-extrabold text-melodyBlue"
+                  >MOMO</span
+                >
+              </div>
+
+              <!-- Mặt bìa mô phỏng thiệp nhạc -->
+              <div
+                class="border-2 border-dashed border-borderBlue/40 bg-[#FFFDF9] rounded-2xl p-4 mt-8 text-center space-y-4"
+              >
+                <span class="text-5xl block animate-bounce">🎼💙</span>
+                <p class="font-bold text-borderBlue text-lg">
+                  Momo Melody Studio
+                </p>
+                <p class="text-sm text-slate-500 leading-relaxed italic">
+                  "Những nét vẽ mộng mơ gửi đến bạn mến thương..."
+                </p>
+                <div
+                  class="flex justify-center gap-1.5 text-xs text-blue-500 font-semibold"
+                >
+                  ⭐️ ⭐️ ⭐️ ⭐️ ⭐️
+                </div>
+              </div>
+
+              <!-- Badge nhỏ xinh dưới góc -->
+              <div
+                class="absolute -bottom-8 -left-8 bg-pastelMint border-4 border-borderBlue p-3 rounded-2xl flex items-center gap-2 shadow-hand-drawn-blue"
+              >
+                <span class="text-3xl">🎨</span>
+                <div>
+                  <h4
+                    class="font-extrabold text-xs text-paperDark leading-tight"
+                  >
+                    Momo Mascot
+                  </h4>
+                  <p class="text-[9px] text-gray-500">Người gom nhặt mộng mơ</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Khung trang trí viền sóng đáy Section -->
+      <div
+        class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10"
+      >
+        <svg
+          class="relative block w-full h-8 text-white fill-current"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.83C58.39,120,131.78,111,196.48,92.83,258.29,75.46,258.9,68,321.39,56.44Z"
+          ></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Giới thiệu các sản phẩm văn phòng phẩm tinh xảo trong hộp quà -->
+    <section id="about" class="py-24 bg-white relative z-20 px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+          <div
+            class="inline-block bg-pastelBlue text-paperDark font-bold px-4 py-1.5 rounded-full text-xs border-2 border-borderBlue"
+          >
+            🎨 VĂN PHÒNG PHẨM THIẾT KẾ ĐỘC QUYỀN
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-paperDark">
+            Hộp quà tháng này có gì bất ngờ?
+          </h2>
+          <p class="text-slate-500">
+            Mỗi ấn phẩm đều được mình tự tay phác thảo, in ấn trên chất liệu
+            chọn lọc để chạm tới trái tim người yêu nghệ thuật.
+          </p>
+          <img src="pic_menu.png" alt="" class="rounded-xl" />
+        </div>
+
+        <!-- Lưới hiển thị các vật phẩm văn phòng phẩm của Momo Melody -->
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          <!-- A6 Postcard -->
+          <div
+            class="bg-cream border-2 border-borderBlue p-5 pt-10 rounded-2xl text-center shadow-sm hover:shadow-hand-drawn-blue hover:-translate-y-1 transition-all col-span-2 md:col-span-1"
+          >
+            <div
+              class="w-full h-[75%] mx-auto bg-[#D1FAE5] rounded-2xl flex items-center justify-center text-3xl mb-4 animate-float"
+            >
+              <img src="pic_postcard.jpg" alt="" class="rounded-xl" />
+            </div>
+            <h3 class="font-bold text-paperDark text-base mb-1 pt-2">
+              A6 Postcard
+            </h3>
+          </div>
+          <!-- 2 sticker kim tuyến -->
+          <div
+            class="bg-cream border-2 border-borderBlue p-5 pt-10 rounded-2xl text-center shadow-sm hover:shadow-hand-drawn-blue hover:-translate-y-1 transition-all col-span-2 md:col-span-1"
+          >
+            <div
+              class="w-full h-[75%] mx-auto bg-[#D1FAE5] rounded-2xl flex items-center justify-center text-3xl mb-4 animate-float"
+            >
+              <img
+                src="https://i.postimg.cc/wMNqrLPP/pic-letter.jpg"
+                alt=""
+                class="rounded-xl"
+              />
+            </div>
+            <h3 class="font-bold text-paperDark text-base pt-2 mb-1">
+              2 Sticker kim tuyến
+            </h3>
+          </div>
+          <!-- sticker pack -->
+          <div
+            class="bg-cream border-2 border-borderBlue p-5 pt-10 rounded-2xl text-center shadow-sm hover:shadow-hand-drawn-blue hover:-translate-y-1 transition-all col-span-2 md:col-span-1"
+          >
+            <div
+              class="w-full h-[75%] mx-auto bg-[#D1FAE5] rounded-2xl flex items-center justify-center text-3xl mb-4 animate-float"
+            >
+              <img src="pic_letter.jpg" alt="" class="rounded-xl" />
+            </div>
+            <h3 class="font-bold text-paperDark text-base mb-1 pt-2">
+              Sticker pack + note A5
+            </h3>
+          </div>
+          <!-- Washi Sticker -->
+          <div
+            class="bg-cream border-2 border-borderBlue p-5 pt-10 rounded-2xl text-center shadow-sm hover:shadow-hand-drawn-blue hover:-translate-y-1 transition-all col-span-2 md:col-span-1"
+          >
+            <div
+              class="w-full h-[75%] mx-auto bg-[#D1FAE5] rounded-2xl flex items-center justify-center text-3xl mb-4 animate-float"
+            >
+              <img src="pic_sticker.jpg" alt="" class="rounded-xl" />
+            </div>
+            <h3 class="font-bold text-paperDark text-base mb-1 pt-2">
+              Washi Sticker
+            </h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ngắm nghía ấn phẩm của chúng mình Momo Melody Studio -->
+    <section
+      id="gallery"
+      class="py-24 bg-cream/50 relative border-t-2 border-b-2 border-dashed border-borderBlue/10 px-6"
+    >
+      <div class="max-w-6xl mx-auto">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center mb-12 gap-6 text-center md:text-left"
+        >
+          <div>
+            <h2 class="text-3xl font-extrabold text-paperDark mb-3">
+              📸 Ngắm nghía ấn phẩm của mình
+            </h2>
+            <p class="text-slate-500 max-w-xl">
+              Hình ảnh sản phẩm thật tự chụp tại studio của Momo. Từng góc nhỏ
+              lấp lánh đều đang đợi bạn mở hộp.
+            </p>
+          </div>
+        </div>
+
+        <!-- Sản phẩm tháng 4 -->
+        <div>
+          <span
+            class="bg-pastelBlue text-paperDark border border-borderBlue px-3 py-1 rounded-full text-lg font-bold shadow-sm"
+            >Tháng 5: Giai điệu mây ngàn ☁️
+          </span>
+          <div class="pt-5 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Thư tháng trước (Postcard A6) -->
+
+            <div
+              class="bg-white p-4 rounded-3xl border-2 border-borderBlue shadow-sm hover:rotate-2 transition-transform"
+            >
+              <div
+                class="aspect-square rounded-2xl bg-pastelBlue/20 border border-borderBlue/10 flex items-center justify-center relative overflow-hidden"
+              >
+                <div
+                  class="absolute inset-4 bg-white p-2 border border-gray-100 shadow-md transform rotate-[-3deg]"
+                >
+                  <div
+                    class="w-full h-[75%] bg-pastelBlue flex items-center justify-center text-5xl"
+                  >
+                    <img src="pic_postcard.jpg" alt="" />
+                  </div>
+                  <div
+                    class="text-[10px] text-center text-gray-400 mt-6 font-mono"
+                  >
+                    Melody Postcard
+                  </div>
+                </div>
+              </div>
+              <h4 class="font-bold text-paperDark text-lg mt-4 mb-1">
+                Postcard A6
+              </h4>
+            </div>
+
+            <!-- 2 Stickers Kim Tuyến -->
+            <div
+              class="bg-white p-4 rounded-3xl border-2 border-borderBlue shadow-sm hover:-rotate-2 transition-transform"
+            >
+              <div
+                class="aspect-square rounded-2xl bg-pastelYellow/20 border border-borderBlue/10 flex items-center justify-center relative overflow-hidden"
+              >
+                <div
+                  class="absolute inset-4 bg-white p-2 border border-gray-100 shadow-md transform rotate-[2deg]"
+                >
+                  <div
+                    class="w-full h-[75%] bg-pastelYellow flex items-center justify-center text-5xl"
+                  >
+                    <img src="pic_stick_2.jpg" alt="" />
+                  </div>
+                  <div
+                    class="text-[10px] text-center text-gray-400 mt-6 font-mono"
+                  >
+                    Glitter sticker
+                  </div>
+                </div>
+              </div>
+              <h4 class="font-bold text-paperDark text-lg mt-4 mb-1">
+                Sticker Kim Tuyến "Lấp Lánh"
+              </h4>
+            </div>
+
+            <!-- Sticker Pack -->
+            <div
+              class="bg-white p-4 rounded-3xl border-2 border-borderBlue shadow-sm hover:rotate-1 transition-transform"
+            >
+              <div
+                class="aspect-square rounded-2xl bg-[#D8F3DC]/20 border border-borderBlue/10 flex items-center justify-center relative overflow-hidden"
+              >
+                <div
+                  class="absolute inset-4 bg-white p-2 border border-gray-100 shadow-md transform rotate-[-1deg]"
+                >
+                  <div
+                    class="w-full h-[75%] bg-emerald-100 flex items-center justify-center text-5xl"
+                  >
+                    🐱🎒
+                  </div>
+                  <div
+                    class="text-[10px] text-center text-gray-400 mt-2 font-mono"
+                  >
+                    Cute stickers pack
+                  </div>
+                </div>
+              </div>
+              <h4 class="font-bold text-paperDark text-lg mt-4 mb-1">
+                Sticker Pack "Mèo Đeo Phone"
+              </h4>
+            </div>
+
+            <!-- Note A5 & Washi -->
+            <div
+              class="bg-white p-4 rounded-3xl border-2 border-borderBlue shadow-sm hover:-rotate-1 transition-transform"
+            >
+              <div
+                class="aspect-square rounded-2xl bg-blue-100/20 border border-borderBlue/10 flex items-center justify-center relative overflow-hidden"
+              >
+                <div
+                  class="absolute inset-4 bg-white p-2 border border-gray-100 shadow-md transform rotate-[3deg]"
+                >
+                  <div
+                    class="w-full h-[75%] bg-sky-100 flex items-center justify-center text-5xl"
+                  >
+                    📝✂️
+                  </div>
+                  <div
+                    class="text-[10px] text-center text-gray-400 mt-2 font-mono"
+                  >
+                    My sweet notes
+                  </div>
+                </div>
+              </div>
+              <h4 class="font-bold text-paperDark text-lg mt-4 mb-1">
+                Note A5 & Washi Combo
+              </h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sản phẩm tháng 5  -->
+        <div class="pt-10">
+          <span
+            class="bg-pastelMint text-paperDark border border-borderBlue px-3 py-1 rounded-full text-lg font-bold shadow-sm"
+            >Tháng 6: Mèo nhạc du ca 🐱</span
+          >
+          <div class="pt-5 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Thư tháng trước (Postcard A6) -->
+
+            <div
+              class="bg-white p-4 rounded-3xl border-2 border-borderBlue shadow-sm hover:rotate-2 transition-transform"
+            >
+              <div
+                class="aspect-square rounded-2xl bg-pastelBlue/20 border border-borderBlue/10 flex items-center justify-center relative overflow-hidden"
+              >
+                <div
+                  class="absolute inset-4 bg-white p-2 border border-gray-100 shadow-md transform rotate-[-3deg]"
+                >
+                  <div
+                    class="w-full h-[75%] bg-pastelBlue flex items-center justify-center text-5xl"
+                  >
+                    <img src="pic_postcard.jpg" alt="" />
+                  </div>
+                  <div
+                    class="text-[10px] text-center text-gray-400 mt-6 font-mono"
+                  >
+                    Melody Postcard
+                  </div>
+                </div>
+              </div>
+              <h4 class="font-bold text-paperDark text-lg mt-4 mb-1">
+                Postcard A6
+              </h4>
+            </div>
+
+            <!-- 2 Stickers Kim Tuyến -->
+            <div
+              class="bg-white p-4 rounded-3xl border-2 border-borderBlue shadow-sm hover:-rotate-2 transition-transform"
+            >
+              <div
+                class="aspect-square rounded-2xl bg-pastelYellow/20 border border-borderBlue/10 flex items-center justify-center relative overflow-hidden"
+              >
+                <div
+                  class="absolute inset-4 bg-white p-2 border border-gray-100 shadow-md transform rotate-[2deg]"
+                >
+                  <div
+                    class="w-full h-[75%] bg-pastelYellow flex items-center justify-center text-5xl"
+                  >
+                    <img src="pic_stick_2.jpg" alt="" />
+                  </div>
+                  <div
+                    class="text-[10px] text-center text-gray-400 mt-6 font-mono"
+                  >
+                    Glitter sticker
+                  </div>
+                </div>
+              </div>
+              <h4 class="font-bold text-paperDark text-lg mt-4 mb-1">
+                Sticker Kim Tuyến "Lấp Lánh"
+              </h4>
+            </div>
+
+            <!-- Sticker Pack -->
+            <div
+              class="bg-white p-4 rounded-3xl border-2 border-borderBlue shadow-sm hover:rotate-1 transition-transform"
+            >
+              <div
+                class="aspect-square rounded-2xl bg-[#D8F3DC]/20 border border-borderBlue/10 flex items-center justify-center relative overflow-hidden"
+              >
+                <div
+                  class="absolute inset-4 bg-white p-2 border border-gray-100 shadow-md transform rotate-[-1deg]"
+                >
+                  <div
+                    class="w-full h-[75%] bg-emerald-100 flex items-center justify-center text-5xl"
+                  >
+                    🐱🎒
+                  </div>
+                  <div
+                    class="text-[10px] text-center text-gray-400 mt-2 font-mono"
+                  >
+                    Cute stickers pack
+                  </div>
+                </div>
+              </div>
+              <h4 class="font-bold text-paperDark text-lg mt-4 mb-1">
+                Sticker Pack "Mèo Đeo Phone"
+              </h4>
+            </div>
+
+            <!-- Note A5 & Washi -->
+            <div
+              class="bg-white p-4 rounded-3xl border-2 border-borderBlue shadow-sm hover:-rotate-1 transition-transform"
+            >
+              <div
+                class="aspect-square rounded-2xl bg-blue-100/20 border border-borderBlue/10 flex items-center justify-center relative overflow-hidden"
+              >
+                <div
+                  class="absolute inset-4 bg-white p-2 border border-gray-100 shadow-md transform rotate-[3deg]"
+                >
+                  <div
+                    class="w-full h-[75%] bg-sky-100 flex items-center justify-center text-5xl"
+                  >
+                    <img src="" alt="" />
+                  </div>
+                  <div
+                    class="text-[10px] text-center text-gray-400 mt-2 font-mono"
+                  >
+                    My sweet notes
+                  </div>
+                </div>
+              </div>
+              <h4 class="font-bold text-paperDark text-lg mt-4 mb-1">
+                Note A5 & Washi Combo
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quy trình hoạt động đơn giản, rõ ràng dạng sơ đồ nét vẽ tay -->
+    <section
+      id="how-it-works"
+      class="py-24 bg-white px-6 relative overflow-hidden"
+    >
+      <div class="max-w-6xl mx-auto relative z-10">
+        <div class="text-center max-w-xl mx-auto mb-16 space-y-3">
+          <span class="text-3xl">🐱🎧</span>
+          <h2 class="text-3xl font-extrabold text-paperDark">
+            Làm thế nào để sắm quà?
+          </h2>
+          <p class="text-slate-500">
+            4 chặng hành trình mang giai điệu văn phòng phẩm ngọt ngào từ Momo
+            Melody Studio đến tận tay bạn.
+          </p>
+        </div>
+
+        <!-- Lưới các bước hành trình -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+          <!-- Bước 1 -->
+          <div
+            class="bg-cream border-2 border-borderBlue p-6 rounded-3xl relative text-center shadow-sm hover:shadow-md transition-all"
+          >
+            <div
+              class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-pastelBlue border-2 border-borderBlue flex items-center justify-center font-bold text-paperDark"
+            >
+              1
+            </div>
+            <div class="text-4xl my-6">📋</div>
+            <h3 class="font-bold text-lg text-paperDark mb-2">
+              Đăng Ký Đơn Nhỏ
+            </h3>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              Chọn các gói ưa thích, chủ đề mà bạn mong đợi nhất và cung cấp địa
+              chỉ giao thư.
+            </p>
+          </div>
+          <!-- Bước 2 -->
+          <div
+            class="bg-cream border-2 border-borderBlue p-6 rounded-3xl relative text-center shadow-sm hover:shadow-md transition-all"
+          >
+            <div
+              class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-pastelMint border-2 border-borderBlue flex items-center justify-center font-bold text-paperDark"
+            >
+              2
+            </div>
+            <div class="text-4xl my-6">✍️</div>
+            <h3 class="font-bold text-lg text-paperDark mb-2">Momo Chuẩn Bị</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              Thiết kế postcard, phủ nhũ kim tuyến sticker lấp lánh và gấp nơ
+              ruy-băng bọc quà tỉ mỉ.
+            </p>
+          </div>
+          <!-- Bước 3 -->
+          <div
+            class="bg-cream border-2 border-borderBlue p-6 rounded-3xl relative text-center shadow-sm hover:shadow-md transition-all"
+          >
+            <div
+              class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-pastelYellow border-2 border-borderBlue flex items-center justify-center font-bold text-paperDark"
+            >
+              3
+            </div>
+            <div class="text-4xl my-6">📦</div>
+            <h3 class="font-bold text-lg text-paperDark mb-2">
+              Giao Xe Bưu Tá
+            </h3>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              Hộp quà được bọc túi bong bóng bảo vệ, dán nhãn vận chuyển xinh
+              xắn và gửi đi muộn nhất ngày 15 hằng tháng.
+            </p>
+          </div>
+          <!-- Bước 4 -->
+          <div
+            class="bg-cream border-2 border-borderBlue p-6 rounded-3xl relative text-center shadow-sm hover:shadow-md transition-all"
+          >
+            <div
+              class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-melodyBlue text-white border-2 border-borderBlue flex items-center justify-center font-bold"
+            >
+              4
+            </div>
+            <div class="text-4xl my-6">💙</div>
+            <h3 class="font-bold text-lg text-paperDark mb-2">Nhận Niềm Vui</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              Hộp quà được bưu tá gõ cửa giao tận nhà. Mở hộp ra để thấy cả giai
+              điệu lấp lánh tràn đầy cảm hứng!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bộ đếm ngược chốt đơn giới hạn của tháng -->
+    <section
+      class="py-16 bg-gradient-to-br from-pastelBlue via-[#E2EFFF] to-pastelYellow px-6 relative border-t-2 border-b-2 border-borderBlue"
+    >
+      <div class="max-w-4xl mx-auto text-center space-y-6">
+        <h3
+          class="text-2xl font-bold text-paperDark flex items-center justify-center gap-2 flex-wrap"
+        >
+          ⏳ Đăng ký hộp quà Momo Melody
+          <span class="text-melodyBlue underline decoration-wavy">Tháng 7</span>
+          sẽ đóng sau:
+        </h3>
+
+        <!-- Hộp đếm lùi thời gian bằng số lớn dễ thương -->
+        <div
+          class="flex justify-center items-center gap-4 text-paperDark flex-wrap"
+        >
+          <div
+            class="bg-white border-2 border-borderBlue px-4 py-3 rounded-2xl shadow-hand-drawn-blue text-center w-20"
+          >
+            <span id="countdown-days" class="text-3xl font-extrabold block"
+              >10</span
+            >
+            <span
+              class="text-[10px] uppercase tracking-wider font-bold text-gray-400"
+              >Ngày</span
+            >
+          </div>
+          <span class="text-2xl font-bold">:</span>
+          <div
+            class="bg-white border-2 border-borderBlue px-4 py-3 rounded-2xl shadow-hand-drawn-blue text-center w-20"
+          >
+            <span id="countdown-hours" class="text-3xl font-extrabold block"
+              >12</span
+            >
+            <span
+              class="text-[10px] uppercase tracking-wider font-bold text-gray-400"
+              >Giờ</span
+            >
+          </div>
+          <span class="text-2xl font-bold">:</span>
+          <div
+            class="bg-white border-2 border-borderBlue px-4 py-3 rounded-2xl shadow-hand-drawn-blue text-center w-20"
+          >
+            <span id="countdown-minutes" class="text-3xl font-extrabold block"
+              >30</span
+            >
+            <span
+              class="text-[10px] uppercase tracking-wider font-bold text-gray-400"
+              >Phút</span
+            >
+          </div>
+          <span class="text-2xl font-bold-none hidden sm:inline">:</span>
+          <div
+            class="bg-white border-2 border-borderBlue px-4 py-3 rounded-2xl shadow-hand-drawn-blue text-center w-20"
+          >
+            <span id="countdown-seconds" class="text-3xl font-extrabold block"
+              >45</span
+            >
+            <span
+              class="text-[10px] uppercase tracking-wider font-bold text-gray-400"
+              >Giây</span
+            >
+          </div>
+        </div>
+
+        <p class="text-sm font-bold text-slate-600">
+          Hãy giữ chỗ ngay hôm nay để trở thành người sớm nhất bóc quà lấp lánh
+          của studio tháng 7 mộng mơ nhé!
+        </p>
+      </div>
+    </section>
+
+    <!-- Form gửi đăng ký về email qua hệ thống Formspree an toàn -->
+    <section id="register" class="py-24 bg-[#F4F9FF] px-6 relative">
+      <div class="max-w-4xl mx-auto">
+        <div
+          class="bg-white border-4 border-borderBlue rounded-3xl shadow-hand-drawn-blue overflow-hidden flex flex-col md:flex-row relative"
+        >
+          <!-- Bìa giới thiệu gói quà bên trái -->
+          <div
+            class="bg-pastelBlue p-10 md:w-5/12 text-paperDark flex flex-col justify-between border-b-4 md:border-b-0 md:border-r-4 border-borderBlue"
+          >
+            <div class="space-y-6">
+              <span class="text-4xl">🎁✨</span>
+              <h3 class="text-2xl font-bold leading-tight">
+                Món quà nhỏ vỗ về tâm hồn
+              </h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Mở hộp quà dễ thương đầy ắp niềm vui sáng tạo bất ngờ hằng tháng
+                tại Momo Melody Studio.
+              </p>
+              <ul class="space-y-3.5 text-xs font-bold text-slate-700">
+                <li class="flex items-center gap-2">
+                  ✔️ Postcard A6 vẽ tay in giấy sần xịn
+                </li>
+                <li class="flex items-center gap-2">
+                  ✔️ 2 Sticker Kim Tuyến lấp lánh
+                </li>
+                <li class="flex items-center gap-2">
+                  ✔️ Combo Sticker Pack + Note A5 + Washi
+                </li>
+                <li class="flex items-center gap-2">✔️ Giao hàng tận tâm</li>
+              </ul>
+            </div>
+            <div class="pt-8 border-t border-borderBlue/25">
+              <p
+                class="text-[10px] text-gray-500 pb-5 uppercase tracking-widest font-bold"
+              >
+                Thành viên Momo Melody
+              </p>
+              <p class="text-lg font-extrabold text-melodyBlue">
+                Trọn gói hộp quà: 145,000đ/tháng
+              </p>
+            </div>
+            <!-- THẺ THÔNG TIN TÀI KHOẢN NGÂN HÀNG (MỚI THÊM) -->
+            <div
+              class="bg-white/90 border-2 border-dashed border-borderBlue p-5 rounded-2xl shadow-sm space-y-3 relative overflow-hidden"
+            >
+              <!-- Sticker dấu bưu điện đóng chéo -->
+              <div
+                class="absolute -top-3 -right-3 w-12 h-12 bg-pastelYellow rounded-full border-2 border-borderBlue flex items-center justify-center text-xs font-bold rotate-12"
+              >
+                BANK 💳
+              </div>
+
+              <h4
+                class="font-extrabold text-sm text-paperDark border-b-2 border-dashed border-borderBlue/10 pb-1.5"
+              >
+                Thông tin chuyển khoản:
+              </h4>
+              <div class="space-y-1.5 text-xs text-slate-700 font-medium">
+                <p>
+                  <span class="text-gray-400 font-bold">Ngân hàng:</span> MB
+                  Bank (Quân Đội)
+                </p>
+                <p>
+                  <span class="text-gray-400 font-bold">Số tài khoản:</span>
+                  <strong class="text-paperDark select-all font-mono"
+                    >0901234567</strong
+                  >
+                </p>
+                <p>
+                  <span class="text-gray-400 font-bold">Chủ tài khoản:</span>
+                  NGUYEN VAN A
+                </p>
+                <p>
+                  <span class="text-gray-400 font-bold"
+                    >Số tiền cần chuyển:</span
+                  >
+                  <strong class="text-melodyBlue font-bold">145,000đ</strong>
+                  <span class="text-gray-400 font-normal"
+                    >(Chưa gồm ship 20k)</span
+                  >
+                </p>
+                <p>
+                  <span class="text-gray-400 font-bold"
+                    >Nội dung chuyển khoản:</span
+                  >
+                  <strong class="text-red-500 font-mono select-all"
+                    >[Họ tên của bạn] - Momo Melody</strong
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phiếu thông tin đăng ký bên phải -->
+          <div class="p-10 md:w-7/12 bg-white">
+            <h3 class="text-2xl font-bold text-paperDark mb-2">
+              Phiếu Chuyển Phát Quà 📬
+            </h3>
+            <p class="text-xs text-gray-500 mb-8 font-semibold">
+              Vui lòng điền đúng thông tin để mèo bưu tá nhà Momo giao quà an
+              toàn nha:
+            </p>
+
+            <!-- Hãy thay thế endpoint bằng link Formspree thật của bạn để nhận tin nhắn qua email -->
+            <form
+              action="https://formspree.io/f/xpqewgyp"
+              method="POST"
+              class="space-y-6"
+              id="mailclub-form"
+            >
+              <div>
+                <label
+                  for="name"
+                  class="block text-xs font-bold text-paperDark mb-2 uppercase tracking-wide"
+                  >Tên của bạn mến</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  name="Họ Tên"
+                  required
+                  placeholder="Ví dụ: Bé Mèo Con"
+                  class="w-full px-4 py-3 bg-[#FFFDF9] border-2 border-borderBlue/40 focus:border-borderBlue rounded-2xl outline-none text-sm text-paperDark"
+                />
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label
+                    for="email"
+                    class="block text-xs font-bold text-paperDark mb-2 uppercase tracking-wide"
+                    >Địa chỉ Email</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="Email"
+                    required
+                    placeholder="meocon@example.com"
+                    class="w-full px-4 py-3 bg-[#FFFDF9] border-2 border-borderBlue/40 focus:border-borderBlue rounded-2xl outline-none text-sm text-paperDark"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="phone"
+                    class="block text-xs font-bold text-paperDark mb-2 uppercase tracking-wide"
+                    >Số điện thoại bưu tá gọi</label
+                  >
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="SĐT"
+                    required
+                    placeholder="0901234567"
+                    class="w-full px-4 py-3 bg-[#FFFDF9] border-2 border-borderBlue/40 focus:border-borderBlue rounded-2xl outline-none text-sm text-paperDark"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label
+                  for="address"
+                  class="block text-xs font-bold text-paperDark mb-2 uppercase tracking-wide"
+                  >Địa chỉ nhận hộp quà (Chính xác)</label
+                >
+                <textarea
+                  id="address"
+                  name="Địa chỉ"
+                  required
+                  rows="2"
+                  placeholder="Số nhà, tên đường, phường/xã, quận/huyện, tỉnh thành..."
+                  class="w-full px-4 py-3 bg-[#FFFDF9] border-2 border-borderBlue/40 focus:border-borderBlue rounded-2xl outline-none text-sm text-paperDark resize-none"
+                ></textarea>
+              </div>
+
+              <div
+                class="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-cream p-4 rounded-2xl border-2 border-dashed border-borderBlue/20"
+              >
+                <div>
+                  <label
+                    for="topic"
+                    class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide"
+                    >Tháng bạn muốn nhận</label
+                  >
+                  <select
+                    id="topic"
+                    name="Chủ đề thích"
+                    class="w-full px-3 py-2 bg-white border border-borderBlue/30 rounded-xl text-xs text-paperDark focus:outline-none"
+                  >
+                    <option value="Tháng 4">🌱 Tháng 4</option>
+                    <option value="Tháng 5">🐱 Tháng 5</option>
+                    <option value="Tháng 6">💙 Tháng 6</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="space-y-2">
+                <label
+                  class="block text-xs font-bold text-paperDark uppercase tracking-wide"
+                  >Tải Lên Bằng Chứng Chuyển Khoản (Ảnh chụp bill)</label
+                >
+
+                <!-- Thẻ bọc vùng drag-drop ảnh dễ thương -->
+                <div
+                  class="border-4 border-dashed border-pastelBlue bg-[#FFFDF9] rounded-2xl p-6 text-center relative hover:bg-cream transition-colors group cursor-pointer"
+                  id="drop-zone"
+                >
+                  <input
+                    type="file"
+                    id="bill-input"
+                    accept="image/*"
+                    class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
+                    required
+                  />
+
+                  <div class="space-y-2" id="upload-prompt">
+                    <span
+                      class="text-4xl block group-hover:scale-110 transition-transform"
+                      >📸📎</span
+                    >
+                    <p class="text-xs font-bold text-paperDark">
+                      Nhấp để chọn ảnh hoặc thả file ảnh bill chuyển khoản vào
+                      đây
+                    </p>
+                    <p class="text-[10px] text-gray-400">
+                      Hỗ trợ ảnh định dạng JPG, PNG, WEBP tối đa 5MB
+                    </p>
+                  </div>
+
+                  <!-- Giao diện hiển thị xem trước ảnh hóa đơn khi đã chọn -->
+                  <div
+                    class="hidden flex flex-col items-center space-y-3"
+                    id="preview-container"
+                  >
+                    <div
+                      class="relative inline-block border-2 border-borderBlue rounded-xl overflow-hidden shadow-md max-w-[200px]"
+                    >
+                      <img
+                        src=""
+                        id="bill-preview"
+                        alt="Bằng chứng chuyển khoản"
+                        class="max-h-40 w-auto object-contain"
+                      />
+                      <!-- Nút xóa ảnh đã chọn -->
+                      <button
+                        type="button"
+                        id="remove-img-btn"
+                        class="absolute -top-1 -right-1 bg-red-500 text-white w-6 h-6 rounded-full border border-borderBlue flex items-center justify-center text-xs font-bold shadow hover:bg-red-600 focus:outline-none z-20"
+                      >
+                        ×
+                      </button>
+                    </div>
+                    <span
+                      class="text-xs font-bold text-green-600 flex items-center justify-center gap-1"
+                      >✔️ Đã tải ảnh hóa đơn lên thành công</span
+                    >
+                  </div>
+                </div>
+                <!-- Ô Input ẩn để chứa dữ liệu ảnh Base64 gửi về Formspree hoàn toàn miễn phí -->
+                <input
+                  type="hidden"
+                  name="Ảnh_Hóa_Đơn_Base64"
+                  id="base64-output"
+                />
+              </div>
+
+              <button
+                type="submit"
+                class="w-full bg-pastelYellow hover:bg-[#FFDF80] text-paperDark font-extrabold py-4 px-6 rounded-2xl border-4 border-borderBlue shadow-hand-drawn-blue hover:shadow-hand-drawn-hover-blue hover:translate-x-[2px] hover:translate-y-[2px] transition-all flex justify-center items-center gap-2 group text-base hover-wiggle"
+              >
+                ✨ Giữ chỗ cho tháng tới
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popup thông báo khi khách gửi form thành công -->
+    <div
+      id="success-modal"
+      class="fixed inset-0 bg-[#1E293B]/60 backdrop-blur-sm z-50 flex items-center justify-center p-6 hidden"
+    >
+      <div
+        class="bg-white border-4 border-borderBlue p-8 rounded-3xl max-w-sm w-full text-center shadow-hand-drawn-blue space-y-6 relative"
+      >
+        <span class="text-6xl block">🐱🎧💖</span>
+        <h4 class="text-2xl font-bold text-paperDark">Đăng ký thành công!</h4>
+        <p class="text-sm text-slate-600 leading-relaxed">
+          Momo Melody Studio đã ghi nhận tấm phiếu dễ thương từ bạn rồi nhé.
+          Chúng mình sẽ gửi thư xác nhận qua email sớm nhất để hướng dẫn bạn
+          hoàn thiện đặt hộp quà!
+        </p>
+        <button
+          onclick="closeModal()"
+          class="w-full bg-pastelBlue hover:bg-pastelBlue/80 text-paperDark font-bold py-3 rounded-xl border-2 border-borderBlue transition-all"
+        >
+          Quay lại studio bướm lượn 🦋
+        </button>
+      </div>
+    </div>
+
+    <!-- Đánh giá đáng yêu từ những người bạn yêu hội họa khắp nơi -->
+    <section
+      class="py-24 bg-white px-6 border-t-2 border-dashed border-borderBlue/10"
+    >
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center max-w-lg mx-auto mb-16 space-y-3">
+          <span class="text-3xl">🐚💙</span>
+          <h2 class="text-3xl font-extrabold text-paperDark">
+            Review ngọt ngào từ mọi người
+          </h2>
+          <p class="text-slate-500">
+            Lời nhắn cảm ơn gửi về hòm thư xinh xắn của Momo hằng tuần.
+          </p>
+        </div>
+
+        <!-- Khung card mô phỏng trang sổ ghi chú đính ghim -->
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Đánh giá 1 -->
+          <div
+            class="bg-[#FFFDF9] border-2 border-borderBlue p-6 rounded-3xl shadow-sm hover:translate-y-[-4px] transition-all relative"
+          >
+            <span class="absolute -top-4 -right-2 transform rotate-12 text-3xl"
+              >🐱</span
+            >
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-12 h-12 rounded-full border-2 border-borderBlue bg-pastelBlue flex items-center justify-center text-xl"
+              >
+                💙
+              </div>
+              <div>
+                <h4 class="font-bold text-sm text-paperDark">Tuyết Mai</h4>
+                <p class="text-[10px] text-gray-400">
+                  Người yêu Bullet Journal
+                </p>
+              </div>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed italic">
+              "Hai tấm sticker kim tuyến dán lên ốp điện thoại trông óng ánh cực
+              kỳ thích mắt luôn á!"
+            </p>
+            <div class="text-blue-500 mt-4 text-xs font-semibold">
+              ⭐⭐⭐⭐⭐
+            </div>
+          </div>
+
+          <!-- Đánh giá 2 -->
+          <div
+            class="bg-[#FFFDF9] border-2 border-borderBlue p-6 rounded-3xl shadow-sm hover:translate-y-[-4px] transition-all relative"
+          >
+            <span class="absolute -top-4 -right-2 transform -rotate-12 text-3xl"
+              >✏️</span
+            >
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-12 h-12 rounded-full border-2 border-borderBlue bg-pastelMint flex items-center justify-center text-xl"
+              >
+                🍃
+              </div>
+              <div>
+                <h4 class="font-bold text-sm text-paperDark">Nhật Minh</h4>
+                <p class="text-[10px] text-gray-400">Designer Tự Do</p>
+              </div>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed italic">
+              "Hộp quà gói ghém đẹp và cực kỳ chỉn chu, postcard A6 in sắc nét
+              trên nền giấy sần rất sang. Họa tiết washi dán siêu êm."
+            </p>
+            <div class="text-blue-500 mt-4 text-xs font-semibold">
+              ⭐⭐⭐⭐⭐
+            </div>
+          </div>
+
+          <!-- Đánh giá 3 -->
+          <div
+            class="bg-[#FFFDF9] border-2 border-borderBlue p-6 rounded-3xl shadow-sm hover:translate-y-[-4px] transition-all relative"
+          >
+            <span class="absolute -top-4 -right-2 transform rotate-6 text-3xl"
+              >✨</span
+            >
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-12 h-12 rounded-full border-2 border-borderBlue bg-pastelYellow flex items-center justify-center text-xl"
+              >
+                🎧
+              </div>
+              <div>
+                <h4 class="font-bold text-sm text-paperDark">Khánh Vy</h4>
+                <p class="text-[10px] text-gray-400">Học sinh THPT</p>
+              </div>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed italic">
+              "Mê nhất sticker pack của Momo, có nhiều hình bé mèo vẽ cực cute
+              luôn. Từ ngày đăng ký hộp quà, cứ hằng tháng là lại có món đồ dễ
+              thương tự nhiên gửi đến trước nhà."
+            </p>
+            <div class="text-blue-500 mt-4 text-xs font-semibold">
+              ⭐⭐⭐⭐⭐
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Câu hỏi thường gặp FAQ -->
+    <section id="faqs" class="py-24 bg-cream/30 px-6">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-extrabold text-paperDark text-center mb-12">
+          💌 Những thắc mắc nhỏ gửi về Momo Melody
+        </h2>
+
+        <div class="space-y-4">
+          <!-- Câu 1 -->
+          <div
+            class="bg-white border-2 border-borderBlue rounded-2xl overflow-hidden shadow-sm"
+          >
+            <button
+              onclick="toggleFaq(1)"
+              class="w-full p-5 text-left font-bold text-paperDark flex justify-between items-center bg-cream/40 focus:outline-none"
+            >
+              <span>📬 Bao lâu thì mình nhận được hộp quà?</span>
+              <span
+                id="faq-icon-1"
+                class="text-lg transition-transform font-bold"
+                >+</span
+              >
+            </button>
+            <div
+              id="faq-ans-1"
+              class="p-5 border-t-2 border-borderBlue/15 text-sm text-slate-600 hidden bg-white"
+            >
+              Momo Melody Studio chốt phiếu đăng ký vào cuối mỗi tháng và bưu tá
+              sẽ lên xe chuyển bánh vào khoảng ngày 15 của tháng sau. Thường bạn
+              sẽ nhận được món quà mộng mơ này sau 2-4 ngày giao hàng bưu cục
+              nhé!
+            </div>
+          </div>
+
+          <!-- Câu 2 -->
+          <div
+            class="bg-white border-2 border-borderBlue rounded-2xl overflow-hidden shadow-sm"
+          >
+            <button
+              onclick="toggleFaq(2)"
+              class="w-full p-5 text-left font-bold text-paperDark flex justify-between items-center bg-cream/40 focus:outline-none"
+            >
+              <span>✨ Chất liệu giấy postcard và note có tốt không?</span>
+              <span
+                id="faq-icon-2"
+                class="text-lg transition-transform font-bold"
+                >+</span
+              >
+            </button>
+            <div
+              id="faq-ans-2"
+              class="p-5 border-t-2 border-borderBlue/15 text-sm text-slate-600 hidden bg-white"
+            >
+              Dạ cực kỳ xịn luôn nha! Postcard A6 sử dụng giấy mỹ thuật sần nhập
+              khẩu định lượng 300gsm cứng cáp, sờ vào rất đã tay. Ruột cuốn Note
+              A5 dùng giấy Ford kem chống lóa dày 100gsm viết mực gel lướt cực
+              êm không sợ thấm sang trang sau đâu ạ.
+            </div>
+          </div>
+
+          <!-- Câu 3 -->
+          <div
+            class="bg-white border-2 border-borderBlue rounded-2xl overflow-hidden shadow-sm"
+          >
+            <button
+              onclick="toggleFaq(3)"
+              class="w-full p-5 text-left font-bold text-paperDark flex justify-between items-center bg-cream/40 focus:outline-none"
+            >
+              <span>❌ Mình có thể huỷ hoặc bảo lưu gói đăng ký không?</span>
+              <span
+                id="faq-icon-3"
+                class="text-lg transition-transform font-bold"
+                >+</span
+              >
+            </button>
+            <div
+              id="faq-ans-3"
+              class="p-5 border-t-2 border-borderBlue/15 text-sm text-slate-600 hidden bg-white"
+            >
+              Có chứ bạn yêu ơi. Bạn chỉ cần inbox về cho page của Momo Melody
+              Studio trước ngày 25 của tháng là có thể thoải mái tạm dừng hoặc
+              dời sang tháng kế tiếp, chúng mình bảo lưu hoàn toàn miễn phí nhé!
+            </div>
+          </div>
+
+          <!-- Câu 4 -->
+          <div
+            class="bg-white border-2 border-borderBlue rounded-2xl overflow-hidden shadow-sm"
+          >
+            <button
+              onclick="toggleFaq(4)"
+              class="w-full p-5 text-left font-bold text-paperDark flex justify-between items-center bg-cream/40 focus:outline-none"
+            >
+              <span>🌻 Chi phí trên đã bao gồm tiền ship chưa?</span>
+              <span
+                id="faq-icon-4"
+                class="text-lg transition-transform font-bold"
+                >+</span
+              >
+            </button>
+            <div
+              id="faq-ans-4"
+              class="p-5 border-t-2 border-borderBlue/15 text-sm text-slate-600 hidden bg-white"
+            >
+              Mức chi phí 145,000đ/tháng đã bao gồm trọn vẹn chi phí sản xuất
+              hộp quà handmade mộng mơ cùng trọn bộ sản phẩm văn phòng phẩm. Phí
+              ship bưu điện nội địa đồng giá 20,000đ cho mọi khu vực trên toàn
+              nước Việt Nam.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chân trang thiết kế xanh dịu, đóng triện logo bưu cục ngọt ngào -->
+    <footer
+      class="bg-cream border-t-4 border-borderBlue py-16 px-6 relative z-10"
+    >
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+        <!-- Cột giới thiệu -->
+        <div class="space-y-6 md:col-span-2">
+          <a href="#" class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 bg-pastelBlue rounded-full border-2 border-borderBlue flex items-center justify-center font-bold text-lg"
+            >
+              <img src="logo.png" alt="" />
+            </div>
+            <span class="text-xl font-bold text-borderBlue tracking-tight"
+              >Momo Melody Studio</span
+            >
+          </a>
+          <p class="text-xs text-slate-500 leading-relaxed max-w-sm">
+            Studio sáng tạo chuyên gửi gắm những bức tranh vẽ mộc, stickers nhũ
+            hologram kim tuyến rực rỡ và băng keo washi dễ thương, giúp xoa dịu
+            áp lực tâm hồn và thắp sáng góc học tập của bạn.
+          </p>
+
+          <div class="space-y-3">
+            <p
+              class="text-xs font-extrabold text-borderBlue flex items-center gap-1"
+            >
+              <span>✨ Ghé chơi với tụi mình tại đây nhé:</span>
+            </p>
+            <div class="flex flex-wrap gap-4 pt-1">
+              <!-- Facebook Button -->
+              <a
+                href="https://www.facebook.com/hieu.nguyenthi.1447"
+                target="_blank"
+                class="flex items-center gap-2.5 bg-[#E8EFFF] hover:bg-[#D4E4FF] border-2 border-borderBlue px-4 py-2.5 rounded-2xl shadow-hand-drawn-blue hover:shadow-hand-drawn-hover-blue hover:translate-x-[2px] hover:translate-y-[2px] transition-all group"
+              >
+                <svg
+                  class="w-6 h-6 text-melodyBlue fill-current group-hover:scale-110 transition-transform"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                  />
+                </svg>
+                <span
+                  class="text-xs font-extrabold text-paperDark tracking-wide"
+                  >Facebook</span
+                >
+              </a>
+
+              <!-- Instagram Button -->
+              <a
+                href="https://www.instagram.com/momo_meomeow"
+                target="_blank"
+                class="flex items-center gap-2.5 bg-[#FFF0F3] hover:bg-[#FFE0E6] border-2 border-borderBlue px-4 py-2.5 rounded-2xl shadow-hand-drawn-blue hover:shadow-hand-drawn-hover-blue hover:translate-x-[2px] hover:translate-y-[2px] transition-all group"
+              >
+                <svg
+                  class="w-6 h-6 text-[#E1306C] fill-current group-hover:scale-110 transition-transform"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+                  />
+                </svg>
+                <span
+                  class="text-xs font-extrabold text-paperDark tracking-wide"
+                  >Instagram</span
+                >
+              </a>
+
+              <!-- Threads Button -->
+              <a
+                href="https://www.threads.com/@momo_meomeow"
+                target="_blank"
+                class="flex items-center gap-2.5 bg-[#F0F2F5] hover:bg-[#E4E6EB] border-2 border-borderBlue px-4 py-2.5 rounded-2xl shadow-hand-drawn-blue hover:shadow-hand-drawn-hover-blue hover:translate-x-[2px] hover:translate-y-[2px] transition-all group"
+              >
+                <svg
+                  class="w-6 h-6 text-paperDark fill-current group-hover:scale-110 transition-transform"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M16.143 12.285c-.007-1.121-.295-1.921-.861-2.399-.44-.37-.999-.498-1.574-.363-.424.099-.757.348-.991.738a3.176 3.176 0 0 0-.34 1.845c-.001 1.25.295 1.996.882 2.454.407.317.92.427 1.445.311.455-.101.815-.36 1.072-.77.243-.388.374-.954.367-1.816zm1.319 3.011c-.563.858-1.393 1.343-2.4 1.405-.145.009-.283.013-.414.013-1.077 0-1.97-.282-2.658-.841-.954-.773-1.424-2.046-1.399-3.784.025-1.722.541-2.955 1.531-3.667.659-.474 1.454-.712 2.366-.708 1.15.006 2.057.359 2.7 1.05.548.588.825 1.406.824 2.433v2.859c0 .324.075.498.242.56.155.059.39-.026.564-.203.743-.757 1.11-1.859 1.11-3.327 0-4.048-2.936-7.34-6.924-7.34-4.57 0-7.854 3.428-7.854 8.271 0 4.75 3.32 8.167 7.854 8.167.928 0 1.895-.141 2.872-.418.423-.12.871.125.996.539.124.414-.112.853-.535.973-1.196.34-2.385.513-3.333.513-5.59 0-9.654-4.148-9.654-9.774C0 6.136 4.149 2.1 9.654 2.1c4.957 0 8.724 3.86 8.724 8.943v1.897c0 .927-.27 1.636-.838 2.112-.414.348-.953.514-1.52.482-.67-.038-1.185-.297-1.456-.738z"
+                  />
+                </svg>
+                <span
+                  class="text-xs font-extrabold text-paperDark tracking-wide"
+                  >Threads</span
+                >
+              </a>
+            </div>
+          </div>
+
+          <div class="text-[10px] text-gray-400">
+            © 2026 Momo Melody Studio. Chúc bạn một ngày ngập tràn âm nhạc và
+            nắng ấm 💙
+          </div>
+        </div>
+
+        <!-- Cột links liên kết -->
+        <div>
+          <h4
+            class="font-bold text-sm text-paperDark mb-4 uppercase tracking-wider"
+          >
+            Thông tin
+          </h4>
+          <ul class="space-y-2.5 text-xs text-slate-600">
+            <li>
+              <a href="#about" class="hover:text-melodyBlue transition-colors"
+                >Vật phẩm trong hộp quà</a
+              >
+            </li>
+            <li>
+              <a
+                href="#how-it-works"
+                class="hover:text-melodyBlue transition-colors"
+                >Quy trình đóng gói</a
+              >
+            </li>
+            <li>
+              <a
+                href="#register"
+                class="hover:text-melodyBlue transition-colors"
+                >Đăng ký giữ chỗ</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Cột liên lạc -->
+        <div>
+          <h4
+            class="font-bold text-sm text-paperDark mb-4 uppercase tracking-wider"
+          >
+            Bưu cục Momo
+          </h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            📬 hello@momomelody.vn<br />
+            📞 090 123 4567<br />
+            📍 Góc Sổ Tay, Tầng Mơ Mộng, Momo Melody Studio 🎧
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // --- 1. Tạo đồng hồ đếm ngược tự động hạn chốt tháng ---
+      // Thiết lập đếm ngược tự động lùi 10 ngày từ thời điểm hiện tại
+      let targetDate = new Date();
+      targetDate.setDate(targetDate.getDate() + 10);
+      targetDate.setHours(targetDate.getHours() + 12);
+      targetDate.setMinutes(targetDate.getMinutes() + 30);
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        if (distance < 0) {
+          document.getElementById("countdown-days").innerText = "00";
+          document.getElementById("countdown-hours").innerText = "00";
+          document.getElementById("countdown-minutes").innerText = "00";
+          document.getElementById("countdown-seconds").innerText = "00";
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown-days").innerText = days
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("countdown-hours").innerText = hours
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("countdown-minutes").innerText = minutes
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("countdown-seconds").innerText = seconds
+          .toString()
+          .padStart(2, "0");
+      }
+
+      setInterval(updateCountdown, 1000);
+      updateCountdown();
+
+      // --- 2. FAQ Accordion đóng mở nhẹ nhàng ---
+      function toggleFaq(id) {
+        const answer = document.getElementById(`faq-ans-${id}`);
+        const icon = document.getElementById(`faq-icon-${id}`);
+
+        if (answer.classList.contains("hidden")) {
+          answer.classList.remove("hidden");
+          icon.innerText = "−";
+          icon.classList.add("text-melodyBlue");
+        } else {
+          answer.classList.add("hidden");
+          icon.innerText = "+";
+          icon.classList.remove("text-melodyBlue");
+        }
+      }
+
+      // --- 3. Đọc tệp tin ảnh và chuyển đổi sang dạng chuỗi Base64 ---
+      const billInput = document.getElementById("bill-input");
+      const dropZone = document.getElementById("drop-zone");
+      const uploadPrompt = document.getElementById("upload-prompt");
+      const previewContainer = document.getElementById("preview-container");
+      const billPreview = document.getElementById("bill-preview");
+      const removeImgBtn = document.getElementById("remove-img-btn");
+      const base64Output = document.getElementById("base64-output");
+
+      // Hàm xử lý khi chọn file ảnh
+      function handleFile(file) {
+        if (file && file.type.startsWith("image/")) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            // Gán hình hiển thị lên giao diện
+            billPreview.src = e.target.result;
+            // Chuyển chuỗi Base64 vào Input ẩn để Formspree tự động gửi đi
+            base64Output.value = e.target.result;
+
+            // Cập nhật giao diện
+            uploadPrompt.classList.add("hidden");
+            previewContainer.classList.remove("hidden");
+          };
+          reader.readAsDataURL(file);
+        }
+      }
+
+      billInput.addEventListener("change", function (e) {
+        const file = e.target.files[0];
+        handleFile(file);
+      });
+
+      // Xử lý sự kiện Drag & Drop kéo thả ảnh
+      dropZone.addEventListener("dragover", function (e) {
+        e.preventDefault();
+        dropZone.classList.add("bg-pastelMint");
+      });
+
+      dropZone.addEventListener("dragleave", function (e) {
+        e.preventDefault();
+        dropZone.classList.remove("bg-pastelMint");
+      });
+
+      dropZone.addEventListener("drop", function (e) {
+        e.preventDefault();
+        dropZone.classList.remove("bg-pastelMint");
+        const file = e.dataTransfer.files[0];
+        handleFile(file);
+      });
+
+      // Nút xóa hình cũ chọn lại hình khác
+      removeImgBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation(); // Ngăn kích hoạt click của Input
+        billInput.value = "";
+        base64Output.value = "";
+        billPreview.src = "";
+
+        uploadPrompt.classList.remove("hidden");
+        previewContainer.classList.add("hidden");
+      });
+
+      // --- 4. Điều khiển gửi biểu mẫu ---
+      const form = document.getElementById("mailclub-form");
+      const modal = document.getElementById("success-modal");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault(); // Ngăn trình duyệt load lại trang
+
+        // Kiểm tra xem đã upload bill chuyển khoản chưa
+        if (!base64Output.value) {
+          alert(
+            "Bạn mến ơi, vui lòng tải ảnh bill chụp chuyển khoản lên để Momo đối soát nhé! 💙",
+          );
+          return;
+        }
+
+        const formData = new FormData(form);
+        const actionUrl = form.getAttribute("action");
+
+        if (actionUrl.includes("YOUR_ENDPOINT_HERE")) {
+          // Hiển thị modal demo dễ thương để xem trước mượt mà
+          modal.classList.remove("hidden");
+          form.reset();
+          removeImgBtn.click(); // Reset khu vực upload ảnh
+        } else {
+          // Gửi dữ liệu thật về backend Formspree qua fetch API
+          fetch(actionUrl, {
+            method: "POST",
+            body: formData,
+            headers: {
+              Accept: "application/json",
+            },
+          })
+            .then((response) => {
+              modal.classList.remove("hidden");
+              form.reset();
+              removeImgBtn.click(); // Reset khu vực upload ảnh
+            })
+            .catch((error) => {
+              modal.classList.remove("hidden");
+              form.reset();
+              removeImgBtn.click(); // Reset khu vực upload ảnh
+            });
+        }
+      });
+
+      function closeModal() {
+        modal.classList.add("hidden");
+      }
+    </script>
+  </body>
+</html>
