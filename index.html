@@ -331,7 +331,7 @@
 
               <!-- Mặt bìa mô phỏng thiệp nhạc -->
               <div
-                class="border-2 border-dashed border-borderBlue/40 bg-[#FFFDF9] rounded-2xl p-4 mt-2 text-center space-y-4"
+                class="border-2 border-dashed border-borderBlue/40 bg-[#FFFDF9] rounded-2xl sm:p-10 p-6 mt-2 text-center space-y-4"
               >
                 <p
                   class="text-base mt-3 pb-3 text-slate-500 leading-relaxed italic"
@@ -428,7 +428,7 @@
         >
           <div>
             <h2 class="text-3xl font-extrabold text-paperDark mb-3">
-              📸 Ngắm nghía ấn phẩm của mình
+              📸 Mail club các tháng trước nè!
             </h2>
             <p class="text-slate-500 max-w-xl">
               Bạn hãy
@@ -564,7 +564,7 @@
                 Thành viên Momo Melody
               </p>
               <p class="text-lg font-extrabold text-melodyBlue">
-                Trọn gói hộp quà: 135,000đ/tháng
+                Trọn gói: 135,000đ/tháng
               </p>
             </div>
             <!-- THẺ THÔNG TIN TÀI KHOẢN NGÂN HÀNG (MỚI THÊM) -->
@@ -612,11 +612,11 @@
                     >Nội dung chuyển khoản:</span
                   >
                   <strong class="text-red-500 font-mono select-all"
-                    >[Tên-SĐT-tháng ĐK]</strong
+                    >[Tên-SĐT]</strong
                   >
                 </p>
                 <span class="text-gray-400 font-bold"
-                  >Ví dụ: momo-0987654321-T5 T7</span
+                  >Ví dụ: Tran Thi Thanh-0901234567</span
                 >
               </div>
             </div>
@@ -640,7 +640,7 @@
               id="form-locked-banner"
               class="hidden mb-4 bg-pastelRed/20 border-2 border-dashed border-pastelRed text-paperDark text-xs sm:text-sm font-bold rounded-2xl px-4 py-3 text-center"
             >
-              🔒 Đăng ký hiện đang tạm khóa. Mail club sẽ mở lại vào ngày 10
+              🔒 Đăng ký hiện đang tạm khóa. Mail club sẽ mở lại vào vài ngày
               tới, hẹn gặp lại bạn nhé!
             </div>
 
@@ -717,65 +717,116 @@
                     class="w-full px-3 sm:px-4 sm:py-3 py-2 bg-[#FFFDF9] border-2 border-borderBlue/40 focus:border-borderBlue rounded-2xl outline-none text-sm text-paperDark resize-none"
                   ></textarea>
                 </div>
+                <div class="hidden space-y-4">
+                  <p
+                    class="text-center text-xs font-bold text-slate-500 uppercase tracking-wide"
+                  >
+                    Chọn gói phù hợp và nhận Mail club mỗi tháng 🎁
+                  </p>
 
-                <div
-                  class="grid grid-cols-1 sm:grid-cols-2 sm:gap-4 bg-cream p-3 sm:p-4 rounded-2xl border-2 border-dashed border-borderBlue/20"
-                >
-                  <div>
-                    <label
-                      class="block text-xs font-bold text-slate-700 mb-1 sm:mb-2 uppercase tracking-wide"
-                    >
-                      Bạn đăng ký:
+                  <div class="grid grid-cols-2 gap-4 sm:gap-4">
+                    <!-- Gói Tháng -->
+                    <label class="cursor-pointer block">
+                      <input
+                        type="radio"
+                        name="months"
+                        value="Gói Tháng"
+                        class="month-checkbox peer sr-only"
+                        checked
+                      />
+                      <div
+                        class="h-full border-2 border-borderBlue/15 peer-checked:border-melodyBlue peer-checked:shadow-hand-drawn-blue bg-white rounded-3xl p-4 sm:p-6 text-center transition-all hover:border-melodyBlue/50"
+                      >
+                        <span class="text-3xl sm:text-4xl block mb-2">🌸</span>
+                        <h4
+                          class="font-extrabold text-paperDark text-sm sm:text-lg mb-1"
+                        >
+                          Gói Tháng
+                        </h4>
+                        <p
+                          class="text-xl sm:text-2xl font-extrabold text-pastelRed"
+                        >
+                          135.000đ
+                        </p>
+                        <p class="text-[10px] sm:text-xs text-slate-400 mt-1">
+                          /1 tháng
+                        </p>
+                      </div>
                     </label>
 
-                    <div class="space-y-1.5">
-                      <label class="flex items-center gap-2">
-                        <input
-                          type="radio"
-                          name="months"
-                          value="Tháng mới"
-                          class="month-checkbox"
-                        />
-                        🌱 Tháng mới
-                      </label>
-
-                      <label class="flex items-center gap-2">
-                        <input
-                          type="radio"
-                          name="months"
-                          value="3 Tháng"
-                          class="month-checkbox"
-                        />
-                        🎉 3 Tháng
-                        <span class="text-[#FF8387] text-xs">(Giảm 10%)</span>
-                      </label>
-                    </div>
+                    <!-- Gói Quý -->
+                    <label class="cursor-pointer block relative">
+                      <span
+                        class="absolute -top-3 left-1/2 -translate-x-1/2 z-10 bg-melodyBlue text-white text-[9px] sm:text-[10px] font-bold px-3 py-1 rounded-full border-2 border-borderBlue whitespace-nowrap"
+                      >
+                        Tiết kiệm hơn ⭐
+                      </span>
+                      <input
+                        type="radio"
+                        name="months"
+                        value="Gói Quý"
+                        class="month-checkbox peer sr-only"
+                      />
+                      <div
+                        class="h-full border-2 border-melodyBlue/40 peer-checked:border-melodyBlue peer-checked:shadow-hand-drawn-blue bg-[#EDEBFB] rounded-3xl p-4 sm:p-6 pt-6 sm:pt-7 text-center transition-all hover:border-melodyBlue"
+                      >
+                        <span class="text-3xl sm:text-4xl block mb-2">🎀</span>
+                        <h4
+                          class="font-extrabold text-paperDark text-sm sm:text-lg mb-1"
+                        >
+                          Gói Quý
+                        </h4>
+                        <p
+                          class="text-xl sm:text-2xl font-extrabold text-pastelRed"
+                        >
+                          364.500đ
+                        </p>
+                        <p class="text-[10px] sm:text-xs text-slate-400 mt-1">
+                          /3 tháng - Vì mình là cô gái nổi loạn nên mình sẻ gửi
+                          đủ cho bạn 3 tháng tại có những tháng mình không làm
+                          vì mình lười á. Mình để đây để mình có động lực làm
+                          thôi - các bạn đừng đăng kí nhé!
+                        </p>
+                      </div>
+                    </label>
                   </div>
 
-                  <!-- Hiển thị các tháng đã chọn -->
-                  <div class="space-y-2 sm:mt-0">
-                    <p class="text-sm font-semibold">Đã chọn:</p>
-                    <div
-                      id="selectedMonths"
-                      class="mt-1 text-sm text-slate-600"
-                    >
-                      Chưa chọn tháng nào
+                  <div
+                    class="flex items-center justify-between bg-cream rounded-2xl border-2 border-dashed border-borderBlue/20 px-4 py-3"
+                  >
+                    <div>
+                      <p
+                        class="text-[10px] sm:text-xs font-semibold text-slate-500"
+                      >
+                        Đã chọn
+                      </p>
+                      <div
+                        id="selectedMonths"
+                        class="text-sm font-bold text-paperDark"
+                      >
+                        Chưa chọn gói nào
+                      </div>
                     </div>
-                  </div>
-
-                  <!-- Hiển thị giá -->
-                  <div class="">
-                    <p class="text-sm font-semibold">
-                      Tổng tiền:
-                      <span id="totalPrice" class="text-pink-600"> 0 VNĐ </span>
-                    </p>
+                    <div class="text-right">
+                      <p
+                        class="text-[10px] sm:text-xs font-semibold text-slate-500"
+                      >
+                        Tổng tiền
+                      </p>
+                      <span
+                        id="totalPrice"
+                        class="text-lg font-extrabold text-pink-600"
+                      >
+                        0 VNĐ
+                      </span>
+                    </div>
                   </div>
                 </div>
 
                 <div>
                   <label
                     for="idea"
-                    class="block text-xs font-bold text-paperDark mb-1 sm:mb-2 uppercase tracking-wide"
+                    class="text-center block text-xs font-bold text-paperDark mb-1 sm:mb-2 uppercase tracking-wide"
                     >Bạn có ý tưởng gì cho tháng mới không?</label
                   >
                   <textarea
@@ -1103,101 +1154,93 @@
     <script>
       // Chạy code sau khi toàn bộ HTML của trang web đã được tải xong
       document.addEventListener("DOMContentLoaded", function () {
-        const PRICE_PER_MONTH = 135000; // Đã đổi thành 135k khớp với giá hiển thị bên gói quà của bạn
+        const PRICE_PER_MONTH = 135000;
         const QUARTERLY_DISCOUNT = 0.1;
 
-        const checkboxes = document.querySelectorAll(".month-checkbox");
+        const radios = document.querySelectorAll(".month-checkbox");
         const selectedMonths = document.getElementById("selectedMonths");
         const totalPrice = document.getElementById("totalPrice");
 
         // Kiểm tra nếu thiếu thẻ trên giao diện thì không chạy để tránh lỗi vặt
-        if (!checkboxes.length || !selectedMonths || !totalPrice) return;
+        if (!radios.length || !selectedMonths || !totalPrice) return;
 
         function updateSelection() {
-          // Chuyển danh sách NodeList thành Array để sử dụng filter
-          const checked = [...checkboxes].filter((cb) => cb.checked);
+          const checked = [...radios].find((r) => r.checked);
 
-          if (checked.length === 0) {
-            selectedMonths.textContent = "Chưa chọn tháng nào";
+          if (!checked) {
+            selectedMonths.textContent = "Chưa chọn gói nào";
             totalPrice.textContent = "0 VNĐ";
             return;
           }
 
-          // Lấy danh sách tên các tháng đã chọn
-          const months = checked.map((cb) => cb.value);
-          selectedMonths.textContent = months.join(", ");
+          selectedMonths.textContent = checked.value;
 
-          const hasQuarterly = checked.some((cb) => cb.value === "3 Tháng");
-
-          let finalTotal = 0;
-
-          if (hasQuarterly) {
-            // Quý 3 = 3 tháng, giảm 10%
-            const quarterlyPrice =
-              PRICE_PER_MONTH * 3 * (1 - QUARTERLY_DISCOUNT);
-            // Các tháng lẻ còn lại (không phải Quý 3)
-            const otherMonths = checked.filter(
-              (cb) => cb.value !== "3 Tháng",
-            ).length;
-            finalTotal = quarterlyPrice + otherMonths * PRICE_PER_MONTH;
-          } else {
-            finalTotal = checked.length * PRICE_PER_MONTH;
-          }
-
-          // Tính tổng tiền dựa trên số lượng checkbox được tích chọn
-          const total = checked.length * PRICE_PER_MONTH;
+          const finalTotal =
+            checked.value === "Gói Quý"
+              ? PRICE_PER_MONTH * 3 * (1 - QUARTERLY_DISCOUNT)
+              : PRICE_PER_MONTH;
 
           totalPrice.textContent = finalTotal.toLocaleString("vi-VN") + " VNĐ";
         }
 
-        // Lắng nghe sự kiện click/thay đổi trạng thái của từng Checkbox
-        checkboxes.forEach((cb) => {
-          cb.addEventListener("change", updateSelection);
+        // Lắng nghe sự kiện chọn radio (đổi gói) để tính lại giá ngay
+        radios.forEach((r) => {
+          r.addEventListener("change", updateSelection);
         });
 
-        // Chạy kích hoạt lần đầu tiên phòng trường hợp có checkbox được tích sẵn
+        // Chạy kích hoạt lần đầu tiên để hiện đúng gói mặc định (Gói Tháng)
         updateSelection();
       });
 
-      // --- 1. Đồng hồ đếm ngược + khóa/mở form theo khung ngày 10 → 27 hàng tháng ---
-      // Trong khung 10-27 (giờ địa phương của trình duyệt): form MỞ, đếm ngược tới 27 23:59:59 (lúc đóng)
-      // Ngoài khung đó (1-9 hoặc 28-cuối tháng): form KHÓA, đếm ngược tới ngày 10 kế tiếp lúc 00:00:00 (lúc mở lại)
-      const OPEN_DAY = 10; // Ngày mở form trong tháng
-      const CLOSE_DAY = 27; // Ngày cuối cùng còn mở (đóng lúc 23:59:59 ngày này)
+      // --- 1. Đồng hồ đếm ngược + khóa/mở form theo NGÀY ADMIN TỰ CHỌN ---
+      // window.orderWindow được script Firebase (module) cập nhật realtime từ Firestore
+      // (settings/orderWindow: openDate, closeDate). Nếu admin CHƯA cấu hình gì trong Firestore,
+      // trang tự dùng khung mặc định lặp lại hàng tháng ngày 10 → 27 bên dưới để không bị vỡ giao diện.
+      window.orderWindow = { openDate: null, closeDate: null };
+      const OPEN_DAY = 10; // Ngày mở form mặc định (khi admin chưa cấu hình)
+      const CLOSE_DAY = 27; // Ngày đóng form mặc định (khi admin chưa cấu hình)
 
       // Tính toán trạng thái hiện tại: đang mở hay đang khóa, và mốc đếm ngược tương ứng
       function getFormWindowState(now) {
+        const custom = window.orderWindow;
+
+        // ----- Có ngày admin tự chọn trong Firestore -----
+        if (custom && custom.openDate && custom.closeDate) {
+          if (now >= custom.openDate && now <= custom.closeDate) {
+            return { isOpen: true, target: custom.closeDate };
+          }
+          if (now < custom.openDate) {
+            return { isOpen: false, target: custom.openDate };
+          }
+          // Đã qua ngày đóng admin đặt, chưa có đợt mới -> không có mốc đếm ngược
+          return { isOpen: false, target: null };
+        }
+
+        // ----- Fallback mặc định: lặp lại hàng tháng ngày 10 → 27 -----
         const year = now.getFullYear();
         const month = now.getMonth();
-
-        // Mốc mở cửa của THÁNG HIỆN TẠI: ngày 10, 00:00:00
         const openStart = new Date(year, month, OPEN_DAY, 0, 0, 0);
-        // Mốc đóng cửa của THÁNG HIỆN TẠI: ngày 27, 23:59:59
         const closeEnd = new Date(year, month, CLOSE_DAY, 23, 59, 59);
 
         if (now >= openStart && now <= closeEnd) {
-          // Đang trong khung 10-27: MỞ, đếm ngược tới lúc đóng
           return { isOpen: true, target: closeEnd };
         }
 
-        // Ngoài khung 10-27: KHÓA
         let nextOpen;
         if (now < openStart) {
-          // Chưa tới ngày 10 của tháng này -> mở lại vào ngày 10 tháng này
           nextOpen = openStart;
         } else {
-          // Đã qua ngày 27 -> mở lại vào ngày 10 tháng KẾ TIẾP
-          // new Date tự động cộng dồn tháng/năm hợp lệ (vd tháng 12 -> tháng 1 năm sau)
           nextOpen = new Date(year, month + 1, OPEN_DAY, 0, 0, 0);
         }
         return { isOpen: false, target: nextOpen };
       }
 
       // Bật/tắt khả năng tương tác với form + hiển thị banner + đổi chữ theo trạng thái
-      let lastKnownIsOpen = null;
-      function applyFormLockState(isOpen) {
-        if (isOpen === lastKnownIsOpen) return; // Tránh cập nhật DOM thừa mỗi giây
-        lastKnownIsOpen = isOpen;
+      let lastKnownStateKey = null;
+      function applyFormLockState(isOpen, target) {
+        const key = isOpen + "|" + (target ? target.getTime() : "none");
+        if (key === lastKnownStateKey) return; // Tránh cập nhật DOM thừa mỗi giây
+        lastKnownStateKey = key;
 
         const fieldset = document.getElementById("mailclub-fieldset");
         const banner = document.getElementById("form-locked-banner");
@@ -1211,9 +1254,16 @@
           actionText.innerText = isOpen ? "sẽ đóng sau:" : "sẽ mở lại sau:";
         }
         if (subText) {
-          subText.innerText = isOpen
-            ? "Hãy đăng ký ngay hôm nay để trở thành người sớm nhất nhận được Mail club tháng này của Momo nhé!"
-            : "Mail club đang tạm đóng đăng ký, hẹn gặp lại bạn khi mở lại nhé!";
+          if (isOpen) {
+            subText.innerText =
+              "Hãy đăng ký ngay hôm nay để trở thành người sớm nhất nhận được Mail club của Momo nhé!";
+          } else if (target) {
+            subText.innerText =
+              "Mail club đang tạm đóng đăng ký, hẹn gặp lại bạn khi mở lại nhé!";
+          } else {
+            subText.innerText =
+              "Mail club hiện chưa mở đợt đăng ký mới, theo dõi trang để cập nhật sớm nhất bạn nhé!";
+          }
         }
       }
 
@@ -1221,7 +1271,15 @@
         const now = new Date();
         const { isOpen, target } = getFormWindowState(now);
 
-        applyFormLockState(isOpen);
+        applyFormLockState(isOpen, target);
+
+        if (!target) {
+          document.getElementById("countdown-days").innerText = "00";
+          document.getElementById("countdown-hours").innerText = "00";
+          document.getElementById("countdown-minutes").innerText = "00";
+          document.getElementById("countdown-seconds").innerText = "00";
+          return;
+        }
 
         const distance = target.getTime() - now.getTime();
 
@@ -1253,6 +1311,10 @@
           .toString()
           .padStart(2, "0");
       }
+
+      // Cho phép script module (Firebase) gọi cập nhật ngay lập tức khi có dữ liệu mới,
+      // không cần đợi tick giây kế tiếp
+      window.updateCountdown = updateCountdown;
 
       setInterval(updateCountdown, 1000);
       updateCountdown();
@@ -1370,60 +1432,116 @@
             </button>
           </div>
 
-          <div>
-            <label class="block text-sm font-bold text-slate-600 mb-1"
-              >Tháng / Năm</label
-            >
-            <input
-              type="month"
-              id="month-value-input"
-              class="w-full border-2 border-borderBlue/30 rounded-xl px-4 py-2.5 focus:outline-none focus:border-melodyBlue"
-            />
-          </div>
-
-          <div>
-            <label class="block text-sm font-bold text-slate-600 mb-1"
-              >Chủ đề tháng</label
-            >
-            <input
-              type="text"
-              id="month-theme-input"
-              placeholder="VD: 🍵 Giai Điệu Matcha Ngọt Ngào 🐱"
-              class="w-full border-2 border-borderBlue/30 rounded-xl px-4 py-2.5 focus:outline-none focus:border-melodyBlue"
-            />
-          </div>
-
-          <div>
-            <label class="block text-sm font-bold text-slate-600 mb-1"
-              >Màu badge</label
-            >
-            <select
-              id="month-color-input"
-              class="w-full border-2 border-borderBlue/30 rounded-xl px-4 py-2.5 focus:outline-none focus:border-melodyBlue"
-            >
-              <option value="#8f9eeb">💙 Xanh dương (Melody Blue)</option>
-              <option value="#d6a362">🤎 Vàng nâu</option>
-              <option value="#ff8387">❤️ Đỏ hồng</option>
-              <option value="#4D7C0F">💚 Xanh lá matcha</option>
-              <option value="#5B8DEF">🩵 Xanh dương nhạt</option>
-              <option value="#B79CED">💜 Tím pastel</option>
-            </select>
-          </div>
-
-          <div>
-            <label class="block text-sm font-bold text-slate-600 mb-2">
-              5 tấm ảnh của tháng (tải ảnh mới HOẶC dán link ảnh có sẵn)
-            </label>
-            <div id="image-slots" class="space-y-3"></div>
-          </div>
-
-          <button
-            id="admin-submit-btn"
-            class="w-full bg-pastelYellow text-paperDark font-bold py-3 rounded-xl border-2 border-borderBlue shadow-hand-drawn-blue hover:shadow-hand-drawn-hover-blue hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
+          <!-- ============================================================ -->
+          <!-- CÀI ĐẶT ĐỢT ĐĂNG KÝ: ngày mở, ngày đóng form -->
+          <!-- ============================================================ -->
+          <div
+            class="bg-cream border-2 border-dashed border-borderBlue/30 rounded-2xl p-4 space-y-3"
           >
-            🚀 Đăng tháng này lên trang
-          </button>
-          <p id="admin-submit-status" class="text-sm font-bold text-center"></p>
+            <h4 class="text-sm font-extrabold text-paperDark">
+              ⏳ Cài đặt đợt đăng ký hiện tại
+            </h4>
+
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label class="block text-xs font-bold text-slate-600 mb-1"
+                  >Ngày mở form</label
+                >
+                <input
+                  type="date"
+                  id="settings-open-date"
+                  class="w-full border-2 border-borderBlue/30 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-melodyBlue"
+                />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-600 mb-1"
+                  >Ngày đóng form</label
+                >
+                <input
+                  type="date"
+                  id="settings-close-date"
+                  class="w-full border-2 border-borderBlue/30 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-melodyBlue"
+                />
+              </div>
+            </div>
+
+            <button
+              id="settings-save-btn"
+              class="w-full bg-melodyBlue text-white font-bold py-2 rounded-xl border-2 border-borderBlue hover:bg-[#ff8387] transition-colors text-sm"
+            >
+              💾 Lưu cài đặt
+            </button>
+            <p
+              id="settings-save-status"
+              class="text-xs font-bold text-center"
+            ></p>
+          </div>
+
+          <div class="border-t-2 border-dashed border-borderBlue/20 pt-4">
+            <div>
+              <label class="block text-sm font-bold text-slate-600 mb-1"
+                >Tháng / Năm</label
+              >
+              <input
+                type="month"
+                id="month-value-input"
+                class="w-full border-2 border-borderBlue/30 rounded-xl px-4 py-2.5 focus:outline-none focus:border-melodyBlue"
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm font-bold text-slate-600 mb-1"
+                >Chủ đề tháng</label
+              >
+              <input
+                type="text"
+                id="month-theme-input"
+                placeholder="VD: 🍵 Giai Điệu Matcha Ngọt Ngào 🐱"
+                class="w-full border-2 border-borderBlue/30 rounded-xl px-4 py-2.5 focus:outline-none focus:border-melodyBlue"
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm font-bold text-slate-600 mb-1"
+                >Màu badge</label
+              >
+              <select
+                id="month-color-input"
+                class="w-full border-2 border-borderBlue/30 rounded-xl px-4 py-2.5 focus:outline-none focus:border-melodyBlue"
+              >
+                <option value="#8f9eeb">💙 Xanh dương (Melody Blue)</option>
+                <option value="#d6a362">🤎 Vàng nâu</option>
+                <option value="#ff8387">❤️ Đỏ hồng</option>
+                <option value="#4D7C0F">💚 Xanh lá matcha</option>
+                <option value="#5B8DEF">🩵 Xanh dương nhạt</option>
+                <option value="#B79CED">💜 Tím pastel</option>
+                <option value="#FDBA74">🧡 Cam đào</option>
+                <option value="#FBCFE8">🌸 Hồng phấn</option>
+                <option value="#FDE047">🌻 Vàng nắng</option>
+                <option value="#94A3B8">🩶 Xám khói</option>
+                <option value="#BE185D">🍷 Đỏ mận</option>
+                <option value="#2DD4BF">💎 Xanh ngọc</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-sm font-bold text-slate-600 mb-2">
+                5 tấm ảnh của tháng (tải ảnh mới HOẶC dán link ảnh có sẵn)
+              </label>
+              <div id="image-slots" class="space-y-3"></div>
+            </div>
+
+            <button
+              id="admin-submit-btn"
+              class="w-full bg-pastelYellow text-paperDark font-bold py-3 rounded-xl border-2 border-borderBlue shadow-hand-drawn-blue hover:shadow-hand-drawn-hover-blue hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
+            >
+              🚀 Đăng tháng này lên trang
+            </button>
+            <p
+              id="admin-submit-status"
+              class="text-sm font-bold text-center"
+            ></p>
+          </div>
         </div>
       </div>
     </div>
@@ -1441,6 +1559,9 @@
         query,
         orderBy,
         serverTimestamp,
+        doc,
+        getDoc,
+        setDoc,
       } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
       import {
         getAuth,
@@ -1644,6 +1765,31 @@
       );
 
       // ------------------------------------------------------------
+      // CÀI ĐẶT ĐỢT ĐĂNG KÝ (settings/orderWindow): ngày mở/đóng + nhãn tháng lẻ
+      // Admin sửa trong modal -> ghi vào đây -> mọi người xem web đều thấy cập nhật ngay
+      // ------------------------------------------------------------
+      const settingsRef = doc(db, "settings", "orderWindow");
+
+      onSnapshot(
+        settingsRef,
+        (snap) => {
+          const data = snap.exists() ? snap.data() : {};
+
+          // ---- Cập nhật khung ngày mở/đóng cho đồng hồ đếm ngược (định nghĩa ở script đầu trang) ----
+          window.orderWindow.openDate = data.openDate
+            ? new Date(data.openDate + "T00:00:00")
+            : null;
+          window.orderWindow.closeDate = data.closeDate
+            ? new Date(data.closeDate + "T23:59:59")
+            : null;
+          if (window.updateCountdown) window.updateCountdown();
+        },
+        (error) => {
+          console.error("Lỗi tải cài đặt đợt đăng ký:", error);
+        },
+      );
+
+      // ------------------------------------------------------------
       // ADMIN: mở / đóng modal
       // ------------------------------------------------------------
       window.openAdminModal = function () {
@@ -1662,11 +1808,56 @@
         if (user) {
           loginView.classList.add("hidden");
           uploadView.classList.remove("hidden");
+          loadSettingsIntoAdminForm();
         } else {
           loginView.classList.remove("hidden");
           uploadView.classList.add("hidden");
         }
       });
+
+      // Đổ dữ liệu cài đặt hiện tại vào form Admin mỗi khi đăng nhập, để admin thấy đúng giá trị đang lưu
+      async function loadSettingsIntoAdminForm() {
+        try {
+          const snap = await getDoc(settingsRef);
+          const data = snap.exists() ? snap.data() : {};
+          document.getElementById("settings-open-date").value =
+            data.openDate || "";
+          document.getElementById("settings-close-date").value =
+            data.closeDate || "";
+        } catch (err) {
+          console.error("Lỗi tải cài đặt vào form admin:", err);
+        }
+      }
+
+      // Lưu cài đặt đợt đăng ký khi admin bấm nút
+      document
+        .getElementById("settings-save-btn")
+        .addEventListener("click", async () => {
+          const statusEl = document.getElementById("settings-save-status");
+          const openDate = document.getElementById("settings-open-date").value;
+          const closeDate = document.getElementById(
+            "settings-close-date",
+          ).value;
+
+          if (openDate && closeDate && openDate > closeDate) {
+            statusEl.textContent = "⚠️ Ngày mở phải trước ngày đóng.";
+            statusEl.className = "text-xs font-bold text-center text-pastelRed";
+            return;
+          }
+
+          statusEl.textContent = "⏳ Đang lưu...";
+          statusEl.className = "text-xs font-bold text-center text-slate-500";
+
+          try {
+            await setDoc(settingsRef, { openDate, closeDate }, { merge: true });
+            statusEl.textContent = "✅ Đã lưu! Trang web cập nhật ngay.";
+            statusEl.className = "text-xs font-bold text-center text-[#4D7C0F]";
+          } catch (err) {
+            console.error(err);
+            statusEl.textContent = "❌ Lưu thất bại, thử lại nhé.";
+            statusEl.className = "text-xs font-bold text-center text-pastelRed";
+          }
+        });
 
       document
         .getElementById("admin-login-btn")
