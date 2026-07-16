@@ -1533,7 +1533,7 @@
 
             <button
               id="admin-submit-btn"
-              class="w-full bg-pastelYellow text-paperDark font-bold py-3 rounded-xl border-2 border-borderBlue shadow-hand-drawn-blue hover:shadow-hand-drawn-hover-blue hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
+              class="w-full bg-pastelYellow text-paperDark font-bold py-4 rounded-xl border-2 border-borderBlue shadow-hand-drawn-blue hover:shadow-hand-drawn-hover-blue hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
             >
               🚀 Đăng tháng này lên trang
             </button>
@@ -1541,6 +1541,24 @@
               id="admin-submit-status"
               class="text-sm font-bold text-center"
             ></p>
+          </div>
+
+          <!-- ============================================================ -->
+          <!-- QUẢN LÝ CÁC THÁNG ĐÃ ĐĂNG: sửa ảnh từng ảnh / xóa cả tháng -->
+          <!-- ============================================================ -->
+          <div class="border-t-2 border-dashed border-borderBlue/20 pt-4">
+            <h4 class="text-sm font-extrabold text-paperDark mb-3">
+              🗂️ Quản lý các tháng đã đăng
+            </h4>
+            <p class="text-xs text-slate-500 mb-3">
+              Bấm vào 1 tấm ảnh để thay ảnh mới, hoặc bấm "Xóa tháng này" để xóa
+              cả tháng.
+            </p>
+            <div id="admin-months-list" class="space-y-4">
+              <p class="text-xs text-slate-400 text-center py-4">
+                Đang tải danh sách...
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -1562,6 +1580,8 @@
         doc,
         getDoc,
         setDoc,
+        updateDoc,
+        deleteDoc,
       } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
       import {
         getAuth,
@@ -1748,6 +1768,164 @@
       };
 
       // ------------------------------------------------------------
+      // ADMIN: vẽ danh sách các tháng đã đăng (để sửa ảnh / xóa)
+      // ------------------------------------------------------------
+      const adminMonthsListEl = document.getElementById("admin-months-list");
+
+      function renderAdminMonthsList(months) {
+        if (!adminMonthsListEl) return;
+
+        if (!months.length) {
+          adminMonthsListEl.innerHTML =
+            '<p class="text-xs text-slate-400 text-center py-4">Chưa có tháng nào được đăng.</p>';
+          return;
+        }
+
+        adminMonthsListEl.innerHTML = months
+          .map((m) => {
+            const color = m.color || "#8f9eeb";
+            const imagesHtml = (m.images || [])
+              .map(
+                (url, i) => `
+                <div class="relative group shrink-0">
+                  <img
+                    src="${escapeHtml(url)}"
+                    onerror="this.src='https://placehold.co/60x60/F4F9FF/CBE2FD?text=Loi'"
+                    class="w-14 h-14 object-cover rounded-lg border-2 border-borderBlue/30"
+                  />
+                  <button
+                    data-edit-image
+                    data-month-id="${m.id}"
+                    data-image-index="${i}"
+                    title="Đổi ảnh này"
+                    class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 rounded-lg text-white text-lg transition-opacity"
+                  >
+                    ✏️
+                  </button>
+                </div>`,
+              )
+              .join("");
+
+            return `
+              <div class="border-2 border-borderBlue/20 rounded-2xl p-3 space-y-2" data-month-card="${m.id}">
+                <div class="flex items-center justify-between gap-2 flex-wrap">
+                  <span
+                    class="text-xs text-white border-2 border-borderBlue px-3 py-1 rounded-full font-bold"
+                    style="background-color:${color}"
+                  >
+                    ${escapeHtml(formatMonthValue(m.monthValue))}: ${escapeHtml(m.theme || "")}
+                  </span>
+                  <button
+                    data-delete-month="${m.id}"
+                    class="text-xs font-bold text-pastelRed border-2 border-pastelRed rounded-full px-3 py-1 hover:bg-pastelRed hover:text-white transition-colors"
+                  >
+                    🗑️ Xóa tháng này
+                  </button>
+                </div>
+                <div class="flex gap-2 flex-wrap">
+                  ${imagesHtml}
+                </div>
+                <p
+                  data-month-status="${m.id}"
+                  class="text-xs font-bold text-center"
+                ></p>
+              </div>`;
+          })
+          .join("");
+      }
+
+      // Bấm nút "✏️" trên 1 ảnh -> mở hộp chọn file -> upload Cloudinary -> cập nhật ảnh đó trong Firestore
+      adminMonthsListEl.addEventListener("click", async (e) => {
+        const editBtn = e.target.closest("[data-edit-image]");
+        if (editBtn) {
+          const monthId = editBtn.getAttribute("data-month-id");
+          const imageIndex = parseInt(
+            editBtn.getAttribute("data-image-index"),
+            10,
+          );
+
+          const fileInput = document.createElement("input");
+          fileInput.type = "file";
+          fileInput.accept = "image/*";
+          fileInput.onchange = async () => {
+            const file = fileInput.files[0];
+            if (!file) return;
+
+            const statusEl = document.querySelector(
+              `[data-month-status="${monthId}"]`,
+            );
+            if (statusEl) {
+              statusEl.textContent = "⏳ Đang tải ảnh mới lên...";
+              statusEl.className =
+                "text-xs font-bold text-center text-slate-500";
+            }
+
+            try {
+              const monthData = latestMonthsData.find((m) => m.id === monthId);
+              if (!monthData) throw new Error("Không tìm thấy tháng này.");
+
+              const newUrl = await uploadToCloudinary(file);
+              const newImages = [...(monthData.images || [])];
+              newImages[imageIndex] = newUrl;
+
+              await updateDoc(doc(db, "months", monthId), {
+                images: newImages,
+              });
+
+              if (statusEl) {
+                statusEl.textContent = "✅ Đã cập nhật ảnh mới!";
+                statusEl.className =
+                  "text-xs font-bold text-center text-[#4D7C0F]";
+              }
+            } catch (err) {
+              console.error(err);
+              if (statusEl) {
+                statusEl.textContent = "❌ Lỗi: " + err.message;
+                statusEl.className =
+                  "text-xs font-bold text-center text-pastelRed";
+              }
+            }
+          };
+          fileInput.click();
+          return;
+        }
+
+        // Bấm "Xóa tháng này" -> xác nhận -> xóa document khỏi Firestore
+        const deleteBtn = e.target.closest("[data-delete-month]");
+        if (deleteBtn) {
+          const monthId = deleteBtn.getAttribute("data-delete-month");
+          const monthData = latestMonthsData.find((m) => m.id === monthId);
+          const label = monthData
+            ? `${formatMonthValue(monthData.monthValue)}: ${monthData.theme || ""}`
+            : "tháng này";
+
+          const confirmed = window.confirm(
+            `Bạn có chắc muốn xóa "${label}"? Hành động này không thể hoàn tác.`,
+          );
+          if (!confirmed) return;
+
+          const statusEl = document.querySelector(
+            `[data-month-status="${monthId}"]`,
+          );
+          if (statusEl) {
+            statusEl.textContent = "⏳ Đang xóa...";
+            statusEl.className = "text-xs font-bold text-center text-slate-500";
+          }
+
+          try {
+            await deleteDoc(doc(db, "months", monthId));
+          } catch (err) {
+            console.error(err);
+            if (statusEl) {
+              statusEl.textContent = "❌ Xóa thất bại: " + err.message;
+              statusEl.className =
+                "text-xs font-bold text-center text-pastelRed";
+            }
+          }
+        }
+      });
+
+      // ------------------------------------------------------------
       // LẮNG NGHE FIRESTORE THỜI GIAN THỰC
       // ------------------------------------------------------------
       const monthsQuery = query(
@@ -1757,8 +1935,12 @@
       onSnapshot(
         monthsQuery,
         (snapshot) => {
-          const months = snapshot.docs.map((doc) => doc.data());
+          const months = snapshot.docs.map((docSnap) => ({
+            id: docSnap.id,
+            ...docSnap.data(),
+          }));
           renderMonths(months);
+          renderAdminMonthsList(months);
         },
         (error) => {
           console.error("Lỗi tải dữ liệu tháng:", error);
